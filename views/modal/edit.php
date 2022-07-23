@@ -1,0 +1,27 @@
+<?php
+foreach ($lap as $j) {
+?>
+<div class="modal-header">
+				<a href="admin" class="close">&times;</a>
+		Edit Status Bayar
+		</div>
+		<form class="form-horizontal" method="post" role="form" action="<?php echo base_url();?>laporan/update">
+		<div class="modal-body">
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Status Bayar</label>
+				<div class="col-sm-9">
+				<input type="hidden" name="nonota" value="<?php echo $j->nonota;?>">
+				<input type="text" id="form-field-1" class="col-xs-10 col-sm-8" name="status_pembayaran" value="<?php echo $j->status_pembayaran; ?>" />
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+		<button type="submit" class="btn btn-success" name="add-admin"><i class="fa fa-save"></i> Simpan</button>
+		<button type="reset" class="btn btn-danger"><i class="fa fa-close"></i> Reset</button>
+		</div>
+		<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+</form>
+<?php } ?>
+	</div>
+</div>
+</div>
